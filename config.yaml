@@ -1,0 +1,13 @@
+entities:
+  TA:
+    identifier: https://ta.example.com
+    kind: trust-anchor
+  L:
+    identifier: https://l.example.com
+    kind: leaf
+  IM:
+    identifier: https://im.example.com
+    kind: intermediate
+edges:
+  - TA -> IM
+  - IM -> L

@@ -1,0 +1,60 @@
+# The example federation in
+# https://openid.net/specs/openid-federation-1_0.html#name-two-coexisting-federations-
+entities:
+  TA-A:
+    identifier: https://ta-a.example.com
+    kind: trust-anchor
+  TA-B:
+    identifier: https://ta-b.example.com
+    kind: trust-anchor
+  IM-A:
+    identifier: https://im-a.example.com
+    kind: intermediate
+  IM-B:
+    identifier: https://im-b.example.com
+    kind: intermediate
+  IM-C:
+    identifier: https://im-c.example.com
+    kind: intermediate
+  OP-A:
+    identifier: https://op-a.example.com
+    kind: leaf
+  RP-A:
+    identifier: https://rp-a.example.com
+    kind: leaf
+  RS-A:
+    identifier: https://rs-a.example.com
+    kind: leaf
+  OP-B:
+    identifier: https://op-b.example.com
+    kind: leaf
+  OP-C:
+    identifier: https://op-c.example.com
+    kind: leaf
+  RP-B:
+    identifier: https://rp-b.example.com
+    kind: leaf
+  AS-A:
+    identifier: https://as-a.example.com
+    kind: leaf
+  RP-C:
+    identifier: https://rp-c.example.com
+    kind: leaf
+  RP-D:
+    identifier: https://rp-d.example.com
+    kind: leaf
+edges:
+  - TA-A -> OP-A
+  - TA-A -> IM-A
+  - TA-B -> IM-A
+  - TA-B -> OP-B
+  - TA-B -> IM-B
+  - IM-A -> RP-A
+  - IM-A -> RS-A
+  - IM-A -> OP-B
+  - IM-B -> IM-C
+  - IM-B -> RP-C
+  - IM-B -> RP-D
+  - IM-C -> OP-C
+  - IM-C -> RP-B
+  - IM-C -> AS-A
